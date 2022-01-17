@@ -1,0 +1,26 @@
+<?php
+
+Route::get('create-brand',[
+    'uses'=>'BrandController@create',
+    'as'=>'create-brand'
+])->middleware('role');
+Route::post('create-brand',[
+    'uses'=>'BrandController@store',
+    'as'=>'create-brand'
+]);
+Route::get('brands',[
+    'uses'=>'BrandController@index',
+    'as'=>'brands'
+]);
+Route::get('edit-brand/{id}',[
+    'uses'=>'BrandController@edit',
+    'as'=>'edit-brand'
+])->middleware('role');
+Route::post('update-brand',[
+    'uses'=>'BrandController@update',
+    'as'=>'update-brand'
+])->middleware('role');
+Route::get('delete-brand/{id}',[
+    'uses'=>'BrandController@delete',
+    'as'=>'delete-brand'
+])->middleware('role');
